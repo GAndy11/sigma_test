@@ -1,0 +1,27 @@
+.container{
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo-box{
+    text-align: center;
+}
+
+.logo{
+    padding-top: 60px;
+    padding-bottom: 40px;
+    width: 260px;
+}
+
+.landing-title{
+    font-weight: 600;
+    padding-bottom: 40px;
+}
+
+.landing-subtitle{
+    text-align: center;
+    width: 90%;
+    padding-bottom: 40px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 500;
+}
