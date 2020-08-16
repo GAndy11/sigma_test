@@ -64,3 +64,10 @@ label{
     border-radius: 5px !important;
     margin-bottom: 23px !important;
 }
+
+.mensaje-box{
+    margin-top: 15px;
+    font-weight: 100;
+    color: #e03b65;
+    font-size: 18px;
+}

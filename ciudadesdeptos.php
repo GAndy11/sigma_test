@@ -1,7 +1,7 @@
 <?php
 
 include_once 'controllers/departamentosController.php';
-//include_once 'controller/ciudadesController.php';
+include_once 'controllers/ciudadesController.php';
 
 
 function Departamentos()
@@ -12,8 +12,24 @@ function Departamentos()
     return $data;
 }
 
-if(isset($_POST['departamento'])){
+function Ciudades($departamento)
+{
+    $ciudades = new ciudadesController();
+    $dataCiudades =$ciudades->ObtenerCiudades($departamento);
+    $data = [];
+    foreach ($dataCiudades[0] as $key => $value) {
+        array_push($data, $value);
+    }
+    
+    return $data;
+}
 
+if(isset($_POST['departamento'])){
+    $datos = Ciudades($_POST['departamento']);
+    $data = new stdClass();
+    $data->ciudades = $datos;
+
+    echo json_encode($data);
 }else{
     $datos = Departamentos();
     $data = new stdClass();

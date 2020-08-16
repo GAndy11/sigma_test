@@ -19,4 +19,33 @@ $(document).ready(function(){
             alert(textstatus);
         }
     });
+
+    //Llenar las ciudades
+    $("#departamento").on("change", function(){
+        $("#ciudad").empty().append('<option value=""> Seleccione </option>');
+
+        var valoresEnviar = {
+            "departamento" : this.value
+        }
+
+        $.ajax({
+            type :"POST",
+            url: "ciudadesdeptos.php",
+            dataType: "json",
+            data: valoresEnviar,
+            success: function(data)
+            {   
+                console.log(data.ciudades);
+                for (let i = 0; i < data.ciudades.length; i++) {
+                    
+                    $("#ciudad").append("<option value='"+data.ciudades[i]+"'>"+ data.ciudades[i] + "</option>");
+                }
+                
+            },
+            error: function (jqXHR, textstatus)
+            {
+                alert(textstatus);
+            }
+        });
+    });
   });
