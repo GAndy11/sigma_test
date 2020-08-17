@@ -1,6 +1,6 @@
 <?php
 
-require_once './models/ContactoModel.php';
+require_once './models/contactoModel.php';
 
 class landingController
 {
