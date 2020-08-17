@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-6">
             <div class="landing-card">
-                <form action="">
+                <form action="?controller=landing&action=GuardarContacto" method="POST">
                     <div class="form-group">
                         <label for="departamento">Departamento*</label>
                         <select class="form-control inputs" id="departamento" name="departamento">
@@ -39,12 +39,15 @@
                     </div>
                     <div class="form-group">
                         <label for="correo">Correo*</label>
-                        <input type="text" class="form-control inputs" id="correo" id="correo" placeholder="Ingrese el Correo">
+                        <input type="text" class="form-control inputs" id="correo" name="correo" placeholder="Ingrese el Correo">
                     </div>
                     <div class="enviar-box">
-                        <span class="btn-enviar" type="submit" class="boton-enviar">Enviar</span>
+                        <button class="btn btn-enviar" type="submit" class="boton-enviar">Enviar</button>
                     </div>
                 </form>
+                <div class="mensaje-box">
+                    <?= $mensaje;?>
+                </div>
             </div>
         </div>
     </div>
