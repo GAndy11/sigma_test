@@ -6,7 +6,7 @@ require_once './views/layouts/header.php';//Aqui va el encabezado
 if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . "Controller";
 }else {
-    
+    header("Location: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?controller=landing&action=index");
     exit();
 }
 
